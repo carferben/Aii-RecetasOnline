@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Proyecto - AII</title>
+	<link rel="stylesheet" href="{% static 'assets/css/estilos.css' %}" />
+	<link rel="stylesheet" href="{% static 'assets/css/slider.css' %}" />
+	<link rel="stylesheet" href="{% static 'assets/css/animate.css' %}" />
+	<link rel="stylesheet" href="{% static 'assets/css/secciones.css' %}" />
+</head>
+<body>
+<header>
+<!-- aquí comienza nuestro menu -->
+	<div class="ancho">
+		<div class="logo">
+			<p><img width="40px" src="\static\images\chef.png"> <a href="/"> Recetas online</a></p>
+		</div>
+		<nav>
+			<ul>
+				<p class="animated slideInUp">Los datos se han cargado perfectamente</p>
+				<li><a href="/load_data/">Cargar datos</a></li>
+				<li><a href="/loadRS/">Cargar sistema de recomendación</a></li>
+				<li><a href="/show_all/">Ver todas las recetas</a></li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<div class="ancho-letras">
+	<div class="letras-slider">
+		<h1 class="animated zoomIn">¡El Mejor Sitio </h1>
+		<h1 class="animated zoomIn"> de Recetas!</h1>
+        <p class="animated slideInUp">Carmen Fernández Benjumea</p>
+	</div>
+</div>
+<div id="particles-js"></div>
+<section class="wap">
+	<section class="bienvenidos"> 
+		<h2>Bienvenidos a Recetas Online</h2>
+		<h3>Top 3 de nuestros usuarios</h3>
+	</section>
+	<section class="contenedor-columnas">
+		{% block content %}
+    		{% for receta in recetas %}
+			<div class="columnasx3">
+				<a href="/show_all/{{ receta.id_receta }}/"><img src="{{receta.foto}}" alt=""></a>
+				<h4>{{receta.titulo}}</h4>
+				<h5>Categoría: {{receta.categoria.titulo}}  </h5>
+				<p>Dificultad: {{receta.dificultad}}  &nbsp; &nbsp; Cocina: {{receta.cocina}}</p>
+			</div>
+		    {% endfor %}
+		{% endblock content %}	
+	</section>
+</section>
+<br>
+
+<section class="banner-2">
+	<h3>Recetas de cocina online<a href="#"></h3>
+</section>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<script src="{% static 'assets/js/particles.js' %} "></script>
+<script src="{% static 'assets/js/app.js' %} "></script>
+<script src="{% static 'assets/js/alto.js' %} "></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</body>
+</html>
